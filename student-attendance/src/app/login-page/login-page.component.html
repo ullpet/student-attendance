@@ -1,0 +1,31 @@
+<div>
+  <img [src]="logoUrl" class="logo">
+
+  <div class="login-form">
+    <div class="heading">Добро пожаловать!</div>
+    <div class="sub-heading">Введите логин и пароль, чтобы войти в систему</div>
+
+    <div [formGroup]="loginForm" class="input-container">
+      <tui-input [tuiHintContent]="hint" class="input" formControlName="login">
+        Введите логин
+      </tui-input>
+      <tui-input-password class="input" formControlName="password">
+        Введите пароль
+      </tui-input-password>
+
+      <button
+        size="m"
+        tuiButton
+        type="submit"
+        class="tui-space_top-2"
+        [disabled]="loginForm.invalid"
+      >
+        Войти
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #hint>
+  <div>Если у вас нет аккаунта, обратитесь к своему преподавателю или администратору системы</div>
+</ng-template>
