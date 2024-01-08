@@ -1,0 +1,37 @@
+<div class="search-panel">
+  <tui-input
+    tuiTextfieldIconLeft="tuiIconSearch"
+    class="search"
+    tuiTextfieldSize="m"
+    [formControl]="search"
+  >
+    Начните вводить номер группы
+  </tui-input>
+
+  <tui-filter
+    class="filters"
+    [formControl]="filters"
+    size="m"
+    [items]="groupFilters"
+  ></tui-filter>
+</div>
+
+<div
+  *ngFor="let group of groupList"
+  class="group-tile"
+  (click)="navigateToGroupPage()"
+>
+  <div class="group-item">
+    <div class="group-title tui-space_right-3">{{ group.number }}</div>
+
+    <tui-badge
+      status="info"
+      [value]="getCourseData(group)"
+      class="tui-space_right-3"
+    ></tui-badge>
+
+    <div class="student-count">{{ group.studentsNumber }} человек</div>
+  </div>
+
+  <tui-svg class="next-icon" src="tuiIconChevronsRightLarge"></tui-svg>
+</div>

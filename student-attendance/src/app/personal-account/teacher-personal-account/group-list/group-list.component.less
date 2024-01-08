@@ -1,0 +1,73 @@
+:host {
+  display: flex;
+  padding-top: 50px;
+  flex-direction: column;
+  width: 1024px;
+}
+
+.heading {
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: var(--tui-base-01);
+  border-radius: 16px;
+  box-shadow: var(--tui-shadow);
+}
+
+.header {
+  font: var(--tui-font-heading-4);
+  margin-bottom: 8px;
+}
+
+.current-date {
+  margin-bottom: 8px;
+  font: var(--tui-font-text-m);
+  color: var(--tui-text-03);
+}
+
+.search-panel {
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+}
+
+.search {
+  margin-right: 24px;
+  flex: 3;
+}
+
+.filters {
+  flex: 2;
+}
+
+.group-item {
+  display: flex;
+}
+
+.group-title {
+  font: var(--tui-font-text-m);
+  font-weight: bold;
+}
+
+.student-count {
+  font: var(--tui-font-text-m);
+  color: var(--tui-text-02);
+}
+
+.next-icon {
+  align-self: end;
+}
+
+.group-tile {
+  cursor: pointer;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  padding: 16px 20px;
+  border-radius: 8px;
+  background-color: var(--tui-base-01);
+  display: flex;
+  justify-content: space-between;
+
+  &:hover {
+    box-shadow: var(--tui-shadow);
+  }
+}

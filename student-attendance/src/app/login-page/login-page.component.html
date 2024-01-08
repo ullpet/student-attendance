@@ -1,24 +1,33 @@
 <div>
-  <img [src]="logoUrl" class="logo">
+  <img [src]="logoUrl" class="logo" />
 
   <div class="login-form">
     <div class="heading">Добро пожаловать!</div>
     <div class="sub-heading">Введите логин и пароль, чтобы войти в систему</div>
 
-    <div [formGroup]="loginForm" class="input-container">
-      <tui-input [tuiHintContent]="hint" class="input" formControlName="login">
-        Введите логин
+    <div>
+      <tui-input
+        [tuiHintContent]="hint"
+        class="input"
+        [formControl]="loginControl"
+      >
+        Логин
       </tui-input>
-      <tui-input-password class="input" formControlName="password">
-        Введите пароль
+      <tui-input-password class="input" [formControl]="passwordControl">
+        Пароль
       </tui-input-password>
+
+      <div *ngIf="isFormInvalid && isFormTouched" class="error-text">
+        Поля логин и пароль должны быть заполнены
+      </div>
 
       <button
         size="m"
         tuiButton
         type="submit"
         class="tui-space_top-2"
-        [disabled]="loginForm.invalid"
+        [disabled]="isFormInvalid"
+        (click)="login()"
       >
         Войти
       </button>
@@ -27,5 +36,8 @@
 </div>
 
 <ng-template #hint>
-  <div>Если у вас нет аккаунта, обратитесь к своему преподавателю или администратору системы</div>
+  <div>
+    Если у вас нет аккаунта, обратитесь к своему преподавателю или
+    администратору системы
+  </div>
 </ng-template>
