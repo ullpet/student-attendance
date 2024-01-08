@@ -1,8 +1,7 @@
 :host {
   display: flex;
-  padding-top: 50px;
+  padding-top: 20px;
   flex-direction: column;
-  width: 1024px;
 }
 
 .heading {
@@ -16,6 +15,10 @@
 .header {
   font: var(--tui-font-heading-4);
   margin-bottom: 8px;
+
+  @media (max-width: 770px) {
+    font: var(--tui-font-heading-6);
+  }
 }
 
 .current-date {

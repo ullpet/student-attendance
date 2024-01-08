@@ -2,7 +2,6 @@
   display: flex;
   padding-top: 50px;
   flex-direction: column;
-  width: 1024px;
 }
 
 .heading {
@@ -28,9 +27,14 @@
   margin-bottom: 20px;
   width: 100%;
   display: flex;
+
+  @media (max-width: 770px) {
+    flex-direction: column;
+  }
 }
 
 .search {
+  margin-bottom: 12px;
   margin-right: 24px;
   flex: 3;
 }
@@ -69,5 +73,13 @@
 
   &:hover {
     box-shadow: var(--tui-shadow);
+  }
+}
+
+.badge {
+  margin-right: 12px;
+
+  @media (max-width: 400px) {
+    display: none;
   }
 }
