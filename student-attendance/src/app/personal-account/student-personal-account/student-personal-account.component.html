@@ -1,1 +1,19 @@
-<h1>Stundent page</h1>
+<tui-block-status *ngIf="isMarked; else error" class="container">
+  <h4 class="tui-space_bottom-8">Вы успешно отметились на паре</h4>
+  <tui-marker-icon
+    class="success-icon"
+    size="l"
+    src="tuiIconCheckLarge"
+  ></tui-marker-icon>
+</tui-block-status>
+
+<ng-template #error>
+  <tui-block-status class="container">
+    <h4 class="tui-space_bottom-8">Произошла ошибка, обратитесь к преподавателю</h4>
+    <tui-marker-icon
+      class="error-icon"
+      size="l"
+      src="tuiIconCheckLarge"
+    ></tui-marker-icon>
+  </tui-block-status>
+</ng-template>

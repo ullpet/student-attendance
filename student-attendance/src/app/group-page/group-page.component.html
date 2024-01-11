@@ -1,1 +1,24 @@
-<h1>Здесь будет страница с QR кодом</h1>
+<div class="container">
+  <img class="logo" src="./assets/images/rea-logo-2.png">
+
+  <div class="white-block">
+    <div class="qr-code-container">
+      <img *ngIf="qrSource" [src]="qrSource" class="qr-code">
+    </div>
+
+    <div *ngIf="groupNumber" class="group-number">{{ groupNumber }}</div>
+  </div>
+
+  <button
+    icon="tuiIconArrowLeft"
+    tuiButton
+    appearance="icon"
+    size="s"
+    type="button"
+    class="logout-button"
+    (click)="navigateBack()"
+  >
+    Назад
+  </button>
+</div>
+

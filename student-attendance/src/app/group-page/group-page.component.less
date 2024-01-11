@@ -3,3 +3,49 @@
   padding-top: 50px;
   flex-direction: column;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.white-block {
+  background-color: var(--tui-base-01);
+  border-radius: var(--tui-radius-m);
+  box-shadow: var(--tui-shadow);
+  padding: 16px;
+  margin-bottom: 40px;
+}
+
+.qr-code-container {
+  border-radius: var(--tui-radius-m);
+}
+
+.qr-code {
+  width: 300px;
+
+  @media (max-width: 550px) {
+    width: 200px;
+  }
+}
+
+.heading {
+  font: var(--tui-font-heading-5);
+  color: var(--tui-primary-active);
+}
+
+.logo {
+  margin-bottom: 40px;
+  width: 500px;
+
+  @media (max-width: 550px) {
+    width: 200px;
+  }
+}
+
+.group-number {
+  margin-bottom: 10px;
+  font: var(--tui-font-text-xl);
+  text-align: center;
+}

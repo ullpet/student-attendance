@@ -1,9 +1,10 @@
 :host {
   display: block;
   background-color: var(--tui-base-02);
+  height: 100%;
 
-  @media (max-width: 400px) {
-    padding: 20px;
+  @media (max-width: 350px) {
+    width: fit-content;
   }
 }
 
@@ -13,5 +14,12 @@
 }
 
 .main-content {
-  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: var(--tui-base-02);
+
+  @media (min-width: 1050px) {
+    padding-top: 30px;
+    width: 1024px;
+  }
 }

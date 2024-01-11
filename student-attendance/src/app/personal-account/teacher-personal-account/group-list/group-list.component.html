@@ -10,28 +10,52 @@
 
   <tui-filter
     class="filters"
-    [formControl]="filters"
     size="m"
+    [formControl]="filters"
+    [content]="filterValue"
+    [identityMatcher]="identityMatcher"
     [items]="groupFilters"
   ></tui-filter>
 </div>
 
-<div
-  *ngFor="let group of groupList"
-  class="group-tile"
-  (click)="navigateToGroupPage()"
->
-  <div class="group-item">
-    <div class="group-title tui-space_right-3">{{ group.number }}</div>
+<ng-container *ngIf="filteredGroupList?.length; else noData">
+  <div
+    *ngFor="let group of filteredGroupList"
+    class="group"
+    (click)="navigateToGroupPage(group.id)"
+  >
+    <div class="group-item">
+      <div class="group-title tui-space_right-3">{{ group.number }}</div>
 
-    <tui-badge
-      status="info"
-      [value]="getCourseData(group)"
-      class="badge"
-    ></tui-badge>
+      <tui-badge
+        status="info"
+        [value]="getCourseData(group)"
+        class="badge"
+      ></tui-badge>
 
-    <div class="student-count">{{ group.studentsNumber }} человек</div>
+      <div class="student-count">{{ group.studentsNumber }} человек</div>
+    </div>
+
+    <tui-svg class="next-icon" src="tuiIconChevronsRightLarge"></tui-svg>
   </div>
+</ng-container>
 
-  <tui-svg class="next-icon" src="tuiIconChevronsRightLarge"></tui-svg>
-</div>
+<ng-template #filterValue let-group>
+  {{ group.title }}
+</ng-template>
+
+<ng-template #noData>
+  <div class="not-found-container">
+    <tui-block-status class="not-found">
+      <img
+        alt="not found"
+        src="./assets/images/not-found.png"
+        class="not-found-image"
+      />
+
+      <h4>Ничего не найдено</h4>
+
+      Попробуйте изменить параметры поиска
+    </tui-block-status>
+  </div>
+</ng-template>

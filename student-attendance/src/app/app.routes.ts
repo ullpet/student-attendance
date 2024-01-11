@@ -12,14 +12,14 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./login-page/login-page.module').then((m) => m.LoginPageModule),
   },
-  // {
-  //   path: 'student',
-  //   canActivate: [AuthGuard],
-  //   loadChildren: () =>
-  //     import(
-  //       './personal-account/student-personal-account/student-personal-account.module'
-  //     ).then((m) => m.StudentPersonalAccountModule),
-  // },
+  {
+    path: 'student',
+    canActivate: [AuthGuard],
+    loadChildren: () =>
+      import(
+        './personal-account/student-personal-account/student-personal-account.module'
+      ).then((m) => m.StudentPersonalAccountModule),
+  },
   {
     path: 'teacher',
     canActivate: [AuthGuard],
@@ -29,13 +29,13 @@ export const routes: Routes = [
       ).then((m) => m.TeacherPersonalAccountModule),
   },
   {
-    path: 'group',
+    path: 'group/:groupNumber',
     canActivate: [AuthGuard],
     loadChildren: () =>
       import('./group-page/group-page.module').then((m) => m.GroupPageModule),
   },
   {
     path: '**',
-    redirectTo: 'teacher',
+    redirectTo: '/login',
   },
 ];

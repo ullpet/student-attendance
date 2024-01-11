@@ -6,4 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './student-personal-account.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class StudentPersonalAccountComponent {}
+export class StudentPersonalAccountComponent {
+  public isMarked = Math.floor(Math.random() * 2);
+}

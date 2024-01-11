@@ -4,9 +4,10 @@ import { TeacherPersonalAccountComponent } from './teacher-personal-account.comp
 import { TeacherPersonalAccountRoutingModule } from './teacher-personal-account-routing.module';
 import '@angular/common/locales/global/ru';
 import { GroupListModule } from './group-list/group-list.module';
+import { TuiButtonModule } from '@taiga-ui/core';
 
 @NgModule({
-  imports: [CommonModule, TeacherPersonalAccountRoutingModule, GroupListModule],
+    imports: [CommonModule, TeacherPersonalAccountRoutingModule, GroupListModule, TuiButtonModule],
   declarations: [TeacherPersonalAccountComponent],
   exports: [TeacherPersonalAccountComponent],
   providers: [{ provide: LOCALE_ID, useValue: 'ru' }],

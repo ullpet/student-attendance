@@ -22,7 +22,21 @@
 }
 
 .current-date {
-  margin-bottom: 8px;
   font: var(--tui-font-text-m);
   color: var(--tui-text-03);
+}
+
+.top-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+}
+
+.logout-button {
+  width: fit-content;
+  margin-left: -10px;
 }

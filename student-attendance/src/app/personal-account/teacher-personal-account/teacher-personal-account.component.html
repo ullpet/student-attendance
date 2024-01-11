@@ -1,6 +1,20 @@
 <div class="heading">
-  <div class="current-date">{{ currentDate | date: 'dd MMMM yyyy' }}</div>
-  <div class="header">Здравствуйте, Преподаватель Преподавателевич! 📚</div>
+  <div class="top-heading">
+    <div class="current-date">{{ currentDate | date: 'dd MMMM yyyy' }}</div>
+
+    <button
+      iconRight="tuiIconLogOut"
+      tuiButton
+      appearance="icon"
+      size="s"
+      type="button"
+      class="logout-button"
+      (click)="logout()"
+    >
+      Выйти
+    </button>
+  </div>
+  <div class="header">Здравствуйте, Марк Сергеевич! 📚</div>
   <div class="tui-text_body-m">Выберите группу из списка, чтобы отметить посещаемость</div>
 </div>
 

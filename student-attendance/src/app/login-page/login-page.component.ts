@@ -13,8 +13,6 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPageComponent {
-  public logoUrl = '../../assets/rea-logo.png';
-
   public loginControl = new FormControl('', Validators.required);
   public passwordControl = new FormControl('', Validators.required);
 
